@@ -28,8 +28,13 @@ type HttpSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Http. Edit http_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	url    string `json:"url"`
+	status []Statusdetails `json:"status"`
+}
+
+type Statusdetails struct {
+	statusCode int   `json:"statusCode"`
+	message    string `json:"message"`
 }
 
 // HttpStatus defines the observed state of Http
